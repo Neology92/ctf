@@ -2,3 +2,4 @@
 - use [dis](https://docs.python.org/3/library/dis.html)
 - hmm, not really. `dis` allows to disassemble the code into bytecode. Not the other way
 - Maybe `uncompyle6` might be a helpful tool
+- ... I'll be back
