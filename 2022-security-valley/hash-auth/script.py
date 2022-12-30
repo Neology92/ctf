@@ -50,7 +50,10 @@ wordlist = [
 def validate(password):
     res = validate_password(password)
     if(res):
-        print(f'{password}: {res}')
+        print("---")
+        print("Cracked!")
+        print(f'Password: {password}')
+        print("---")
         return password
 
 def main():
@@ -60,23 +63,27 @@ def main():
 
     for i in range(1,3):
         upperred_wordlist = list(map(lambda item: item.upper(), wordlist))
-        titled_wordlist = list(map(lambda item: item.title(), wordlist))
+        titled_wordlist = list(map(lambda item: item[0].upper() + item[1:], wordlist))
         combinations += list(itertools.permutations(wordlist, i))
         combinations += list(itertools.permutations(upperred_wordlist, i))
         combinations += list(itertools.permutations(titled_wordlist, i))
 
     for c in combinations:
         password = "_".join(c)
-        validate(password)
+        if validate(password):
+            return
 
         password = "-".join(c)
-        validate(password)
+        if validate(password):
+            return
 
         password = "".join(c)
-        validate(password)
+        if validate(password):
+            return
 
         password = password[0].lower() + password[1:]
-        validate(password)
+        if validate(password):
+            return
 
         counter += 4
 
