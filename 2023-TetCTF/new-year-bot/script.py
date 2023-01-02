@@ -15,7 +15,7 @@ flag = ""
     # flag += chr(res.content[-7])
 
 i = 6
-res = requests.post(addr, headers=headers, data=data+"1:-1")
+res = requests.post(addr, headers=headers, data=data+"2")
 # print(f"fetching... {chr(res.content[-10:])}")
 print(res.text)
 
