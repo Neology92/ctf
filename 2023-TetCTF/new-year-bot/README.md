@@ -1,0 +1,5 @@
+- flag is under FL4G variable
+- use Content-Type: "application/x-www-form-urlencoded" header to make valid POST req
+- use "debug" param to check flag length
+- flag length is 24 chars
+- possible to fetch only for indexes in range of the longest array (which is 5)
